@@ -1,2 +1,0 @@
-# Daybook
-Your Daily Planner

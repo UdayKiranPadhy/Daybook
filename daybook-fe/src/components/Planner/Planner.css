@@ -1,0 +1,13 @@
+.planner-container {
+  display: flex;
+  overflow-x: auto;
+}
+* + .planner-item {
+  margin-block-start: 0rem;
+}
+
+.planner-container .planner-item {
+  margin: 5px;
+  min-width: 300px;
+  text-align: center;
+}

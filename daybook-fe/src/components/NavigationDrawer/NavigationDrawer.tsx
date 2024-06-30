@@ -4,19 +4,19 @@ import { AnimatePresence, motion } from "framer-motion";
 function NavigationDrawer({ drawerOpen }: { drawerOpen: any }) {
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence initial={false} mode="wait">
         {drawerOpen && (
           <motion.div
             key={"drawer"}
-            initial={{ translateX: "-100%" }}
-            animate={{ translateX: "0%" }}
-            exit={{ translateX: "-100%" }}
+            // initial={{ translateX: "-100vw" }}
+            // animate={{ translate: "100vw" }}
+            exit={{ width: "0", translateX: "-100vh" }}
             transition={{
-              ease: "easeInOut",
-              duration: 0.5,
+              ease: "linear",
+              duration: 0.3,
             }}
           >
-            <nav className={`drawer border round`}>
+            <nav className="drawer border round">
               <header>
                 <nav>
                   <img

@@ -9,7 +9,7 @@ function NavBar({
 }) {
   return (
     <>
-      <header className="primary-container fixed">
+      <header className="primary fixed">
         <nav>
           <button
             className="circle transparent"

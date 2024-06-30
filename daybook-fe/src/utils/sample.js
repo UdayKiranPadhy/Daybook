@@ -1,0 +1,37 @@
+export const sampleData = [
+  {
+    title: "title1",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+  {
+    title: "title2",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+  {
+    title: "title3",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+  {
+    title: "title4",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+  {
+    title: "title5",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+  {
+    title: "title6",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+  {
+    title: "title7",
+    description:
+      "“Looking back on a childhood filled with events and memories, I find it rather difficult to pick on that leaves me with the fabled “warm and fuzzy feelings.” As the daughter of an Air Force Major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grande Canyon and have jumped on the beds at Caesar’s Palace in Lake Tahoe. However, I have discovered that when reflecting on my childhood, it is not the trips that come to mind, instead there are details from everyday doings; a deck of cards, a silver bank or an ice cream flavor. One memory that comes to mind belongs to a day of no particular importance. It was late in the fall in Merced, California on the playground of my old elementary school; an overcast day with the wind blowing strong. I stood on the blacktop, pulling my hoodie over my ears. The wind was causing miniature tornados; we called them “dirt devils”, to swarm around me.”",
+  },
+];

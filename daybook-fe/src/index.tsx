@@ -5,23 +5,10 @@ import "beercss";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useNavigate,
-} from "react-router-dom";
-import isAuthenticated from "./utils/login";
-
-const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!isAuthenticated()) {
-      navigate("/login");
-    }
-  }, [navigate]);
-  return <>{children}</>;
-};
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import PublicRoute from "./components/PublicRoute/PublicRoute";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Logout from "./components/Logout/Logout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -38,9 +25,26 @@ const router = createBrowserRouter([
   },
   {
     path: "login",
-    element: <div>Login</div>,
+    element: (
+      <PublicRoute>
+        <div>
+          <h1>
+            <a href="http://localhost:8000/oauth/google">Login with Google</a>
+          </h1>
+        </div>
+      </PublicRoute>
+    ),
+  },
+  {
+    path: "logout",
+    element: (
+      <PrivateRoute>
+        <Logout />
+      </PrivateRoute>
+    ),
   },
 ]);
+
 root.render(
   <Provider store={store}>
     <React.StrictMode>

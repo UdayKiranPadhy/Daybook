@@ -1,0 +1,25 @@
+version: "3.10"
+
+services:
+  backend:
+    build:
+      dockerfile: dockerfiles/python/Dockerfile
+      context: .
+    ports:
+      - "8000:80"
+    volumes:
+      - "./daybook-be/:/code"
+    environment:
+      ROLE: api
+    env_file:
+      - ./daybook-be/.env
+  frontend:
+    build:
+      dockerfile: dockerfiles/node/Dockerfile
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./daybook-fe/:/usr/src/app"
+    environment:
+      ROLE: web

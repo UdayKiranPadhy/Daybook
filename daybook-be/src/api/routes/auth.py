@@ -8,7 +8,6 @@ from src.api.dependencies import container
 from src.config import Config
 
 router = APIRouter(prefix="/oauth")
-# https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=gg&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.appdata+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&access_type=offline
 
 @router.get("/google")
 async def read_root(

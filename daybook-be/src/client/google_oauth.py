@@ -1,15 +1,19 @@
 from abc import ABC, abstractmethod
 from logging import Logger
+import jwt
+
 
 import httpx
 
 from src.client.base import HTTPClient
 from src.config import Config
-from src.models.oauth import AuthCode, AccessToken, GoogleOAuthTokenResponse
+from src.models.oauth import AuthCode, AccessToken, GoogleOAuthTokenResponse, IdToken
 
 
 class GoogleOAuthClient(HTTPClient, ABC):
-    TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token"
+    # TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token"
+    TOKEN_ENDPOINT = "https://www.googleapis.com/oauth2/v4/token"
+
     PROFILE_INFO_ENDPOINT = "https://www.googleapis.com/userinfo/v2/me"
     config: Config
 
@@ -18,16 +22,20 @@ class GoogleOAuthClient(HTTPClient, ABC):
         self.config = config
 
     @abstractmethod
-    def exchange_auth_code_for_access_token(self, auth_code: AuthCode) -> AccessToken:
+    def exchange_auth_code_for_access_token(self, auth_code: AuthCode) -> GoogleOAuthTokenResponse:
         pass
 
     @abstractmethod
-    def get_profile_info(self, access_token: AccessToken) -> None:
+    def get_profile_info_using_access_token(self, data:AccessToken) -> None:
+        pass
+
+    @abstractmethod
+    def get_profile_info_using_id_token(self, data: IdToken) -> None:
         pass
 
 
 class ApiGoogleOAuthClient(GoogleOAuthClient):
-    def exchange_auth_code_for_access_token(self, auth_code: AuthCode) -> AccessToken:
+    def exchange_auth_code_for_access_token(self, auth_code: AuthCode) -> GoogleOAuthTokenResponse:
         try:
             response = self.http_client.post(
                 self.TOKEN_ENDPOINT,
@@ -39,8 +47,7 @@ class ApiGoogleOAuthClient(GoogleOAuthClient):
                     "grant_type": "authorization_code",
                 },
             )
-            response_object = GoogleOAuthTokenResponse.model_validate(response.json())
-            return response_object.access_token
+            return GoogleOAuthTokenResponse.model_validate(response.json())
         except httpx.HTTPError as e:
             self.logger.error(
                 "Failed to exchange auth code for access token",
@@ -48,7 +55,7 @@ class ApiGoogleOAuthClient(GoogleOAuthClient):
             )
             raise
 
-    def get_profile_info(self, access_token: AccessToken) -> None:
+    def get_profile_info_using_access_token(self, access_token: AccessToken) -> None:
         try:
             response = self.http_client.get(
                 self.PROFILE_INFO_ENDPOINT,
@@ -61,3 +68,8 @@ class ApiGoogleOAuthClient(GoogleOAuthClient):
                 exc_info=e,
             )
             raise
+
+    def get_profile_info_using_id_token(self, id_token: IdToken) -> None:
+        decoded_token = jwt.decode(id_token, options={"verify_signature": False})
+        return decoded_token
+

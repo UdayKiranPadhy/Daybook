@@ -9,6 +9,7 @@ from src.config import Config
 
 router = APIRouter(prefix="/oauth")
 
+
 @router.get("/google")
 async def read_root(
     request: Request,
@@ -19,6 +20,6 @@ async def read_root(
     return FastAPIResponse(
         status_code=302,
         headers={
-            "Location": f"https://accounts.google.com/o/oauth2/v2/auth?client_id={config.google_oauth.client_id}&redirect_uri={domain}{config.google_oauth.redirect_uri}&response_type=code&scope=profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.appdata+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&access_type=offline&state=1234567890"
+            "Location": f"https://accounts.google.com/o/oauth2/v2/auth?client_id={config.google_oauth.client_id}&redirect_uri={domain}{config.google_oauth.redirect_uri}&response_type=code&scope=openid+email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.appdata+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&access_type=offline&state=1234567890"
         },
     )

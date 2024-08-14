@@ -12,6 +12,12 @@ dependencies = [
     "python-dotenv ~= 1.0.0",
     "logtail-python ~= 0.2.9",
     "PyJWT",
+    "PyDrive2",
+    "google-auth",
+    "google-auth-oauthlib",
+    "google-auth-httplib2",
+    "google-api-python-client",
+    "pygsheets"
 ]
 [project.optional-dependencies]
 dev = [

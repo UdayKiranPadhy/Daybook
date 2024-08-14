@@ -39,31 +39,18 @@ clean:
 	find . -iname "*.pyc" -exec rm -rf {} +
 	find . -iname "*.egg-info" -exec rm -rf {} +
 
-# Tests
-unit-tests:
-	$(PYTHON) -m coverage run -m pytest tests/
-
-unit-tests-bitbucket:
-	mkdir -p ./test-results
-	$(PYTHON) -m coverage run -m pytest --junitxml=./test-results/unit-tests.xml tests/
-
 coverage-xml:
 	$(PYTHON) -m coverage xml
 
 BLACK = $(or $(wildcard $(VENV)/bin/black), $(shell which black))
 RUFF  = $(or $(wildcard $(VENV)/bin/ruff), $(shell which ruff))
 MYPY  = $(or $(wildcard $(VENV)/bin/mypy), $(shell which mypy))
+
 format:
-	$(BLACK) src/ tests/ ./cli.py
-	$(RUFF) check --fix-only src/ tests/ ./cli.py
+	$(BLACK) src/ tests/
+	$(RUFF) check --fix-only src/ tests/
 
 lint:
-	$(BLACK) --check src/ tests/ ./cli.py
-	$(RUFF) check src/ tests/ ./cli.py
+	$(BLACK) --check src/ tests/
+	$(RUFF) check src/ tests/
 	$(MYPY) src/
-
-lint-bitbucket:
-	$(BLACK) --check src/ tests/ ./cli.py
-	mkdir -p ./test-results
-	$(RUFF) check --output-format junit src/ tests/ ./cli.py > ./test-results/ruff.xml
-	$(MYPY) --junit-xml ./test-results/mypy.xml src/
